@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Basics & Box Model Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>CSS Basics &amp; The Box Model</h1>
+      <p class="lead">A small demo page showing external CSS, selectors and how margin, padding and border affect layout.</p>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#examples">Box Model Examples</a></li>
+          <li><a href="#cards">Cards & Layout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>This page uses an external stylesheet (<code>styles.css</code>) to style headings, paragraphs, navigation and layout sections. The CSS demonstrates the <strong>box model</strong> by using <code>padding</code>, <code>border</code>, and <code>margin</code> on elements and visualizing boxes with background colors.</p>
+    </section>
+
+    <section id="examples">
+      <h2>Box Model Examples</h2>
+
+      <p class="muted">Below are three boxes that intentionally show different uses of padding, border and margin. Notice how the space inside the box (padding), the border, and the space outside the box (margin) change the layout.</p>
+
+      <div class="box-row">
+        <div class="box card margin-demo">
+          <h3>Margin</h3>
+          <p>External spacing from surrounding elements.</p>
+          <pre class="css-snippet">.margin-demo { margin: 30px; }</pre>
+        </div>
+
+        <div class="box card padding-demo">
+          <h3>Padding</h3>
+          <p>Internal spacing between content and border.</p>
+          <pre class="css-snippet">.padding-demo { padding: 30px; }</pre>
+        </div>
+
+        <div class="box card border-demo">
+          <h3>Border</h3>
+          <p>The visible edge of a box; also contributes to total size.</p>
+          <pre class="css-snippet">.border-demo { border: 6px solid rgba(11,99,255,0.25); }</pre>
+        </div>
+      </div>
+
+      <p class="tip">Tip: Open your browser devtools and inspect any of these elements. The devtools "box model" panel visualizes margin, border, padding and content area for the selected element.</p>
+    </section>
+
+    <section id="cards">
+      <h2>Cards & Layout (Grid)</h2>
+      <p>Cards show how margin, padding and border interact in a layout. Each card uses <code>box-sizing: border-box;</code> so padding and border are included in the declared width.</p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Card One</h3>
+          <p>This card has padding and a border. The card width is constrained by the grid column.</p>
+          <button class="btn">Action</button>
+        </article>
+
+        <article class="card">
+          <h3>Card Two</h3>
+          <p>Try resizing the browser to see how the grid reflows.</p>
+          <button class="btn">Action</button>
+        </article>
+
+        <article class="card">
+          <h3>Card Three</h3>
+          <p>Spacing between cards is controlled by <code>gap</code> and card margins.</p>
+          <button class="btn">Action</button>
+        </article>
+      </div>
+
+      <h3>Simple form (styled)</h3>
+      <form class="sample-form" action="#" method="get" autocomplete="on">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name">
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com">
+
+        <button type="submit" class="btn primary">Submit</button>
+      </form>
+
+    </section>
+
+    <section id="notes">
+      <h2>Notes & Observations</h2>
+      <ul>
+        <li>The rule <code>* { box-sizing: border-box; }</code> makes widths include padding and border which is often easier to reason about.</li>
+        <li>Margins collapse vertically between block elements — this is normal behavior and can be inspected using devtools.</li>
+        <li>Use background colors on containers to visualize padding &amp; margin boundaries.</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>

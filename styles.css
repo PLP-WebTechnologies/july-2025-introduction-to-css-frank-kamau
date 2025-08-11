@@ -1,0 +1,77 @@
+/* styles.css - External stylesheet for index.html */
+
+/* ---------- Global / Reset ---------- */
+/* Use border-box so padding and border are included in element width */
+* { box-sizing: border-box; }
+
+:root{
+  --bg: #f4f7fb;
+  --card-bg: #ffffff;
+  --accent: #0b63ff;
+  --muted: #556b84;
+  --max-width: 1000px;
+}
+
+html,body{ height:100%; margin:0; padding:0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#0b2338 }
+
+/* ---------- Layout containers ---------- */
+.container{ max-width:var(--max-width); margin:0 auto; padding:1rem; }
+
+.site-header{ background:linear-gradient(180deg, #ffffff, #f7fbff); border-bottom:1px solid rgba(11,99,255,0.06); }
+.site-header .container{ display:flex; flex-direction:column; gap:0.5rem }
+
+h1{ margin:0; font-size:1.4rem }
+.lead{ margin:0; color:var(--muted); font-size:0.95rem }
+
+/* ---------- Navigation ---------- */
+.main-nav ul{ list-style:none; padding:0; margin:0; display:flex; gap:0.5rem }
+.main-nav a{ text-decoration:none; padding:0.35rem 0.6rem; border-radius:6px; color:var(--accent); background:#f1f6ff; font-weight:600 }
+
+/* ---------- Sections & headings ---------- */
+main h2{ margin-top:1.25rem }
+.muted{ color:var(--muted) }
+
+/* ---------- Box model demos ---------- */
+.box-row{ display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.75rem }
+.box{ flex:1 1 220px; min-width:220px }
+
+.card{ background:var(--card-bg); padding:1rem; border-radius:8px; border:1px solid rgba(11,99,255,0.06); box-shadow:0 6px 18px rgba(11,22,40,0.03) }
+
+/* Specific demos showing margin / padding / border */
+.margin-demo{ background: #fff7f0; margin:30px; }
+.padding-demo{ background: #f0fff7; padding:30px; }
+.border-demo{ background: #f5f9ff; border:6px solid rgba(11,99,255,0.20); }
+
+/* Make code snippets inside the boxes easy to read */
+.css-snippet{ background:#0b122010; padding:0.5rem; border-radius:4px; color:#08306b; font-size:0.85rem; margin-top:0.5rem }
+
+/* ---------- Grid for cards ---------- */
+.grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-top:0.75rem }
+.grid .card{ padding:1rem; }
+
+/* Buttons */
+.btn{ display:inline-block; padding:0.5rem 0.75rem; border-radius:6px; border:1px solid rgba(11,99,255,0.12); background:#fff; cursor:pointer; font-weight:700 }
+.btn.primary{ background:var(--accent); color:#fff; border-color:transparent }
+
+/* ---------- Simple form styling to show spacing & box sizing ---------- */
+.sample-form{ margin-top:1rem; display:grid; gap:0.5rem; max-width:480px }
+.sample-form input[type="text"], .sample-form input[type="email"]{ padding:0.6rem; border:1px solid rgba(11,99,255,0.10); border-radius:6px }
+
+/* ---------- Visual helpers & responsive ---------- */
+.tip{ font-size:0.95rem; color:var(--muted); margin-top:0.5rem }
+
+.site-footer{ margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(11,99,255,0.06); }
+
+@media (max-width:600px){
+  .site-header .container{ padding:0.5rem }
+  .box-row{ flex-direction:column }
+}
+
+/* ---------- Comments / Teaching notes ---------- */
+/*
+  Notes:
+  - box-sizing: border-box includes padding and border inside width/height calculations
+  - margin affects spacing between boxes (outside), while padding affects spacing inside boxes
+  - borders are visible and take up space between padding and margin
+  - use developer tools to inspect the computed box model of any element
+*/
